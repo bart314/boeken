@@ -25,19 +25,63 @@
     a { text-decoration:none; }
     a:hover { text-decoration:underline; }
 
+    #menu-container { width:8vw; position:fixed; top:1vh; left:5vw; }
+    #menu-container img { width:100%; cursor:pointer; }
+    #menu { position:fixed; top:5vh; left:1vw; background-color:white; z-index:9;
+        white-space:nowrap;
+        overflow-x:hidden;
+        overflow-y:scroll;
+        list-style:none; 
+        padding:1vw;
+        opacity:0;
+        margin:0;
+        height:0;
+    }
+
+    #menu li:hover { cursor:pointer; text-decoration:underline; }
+
+    .animate-open {
+        border:solid gray 1px;
+        animation: slide-open .5s ease;
+        animation-fill-mode:forwards;
+    }
+
+    .animate-close {
+        animation: slide-close .5s ease;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes slide-open {
+        from { height:0; opacity:0; }
+        to { height:50vh; opacity:1;  }
+        
+    }
+
+    @keyframes slide-close {
+        from { height:50vh; opacity:1; }
+        to { height:0; opacity:0; }
+    }
+        
 
     @media (min-width:600px) {
         p, ol, ul { width:70vw;margin:3vh auto; text-align:justify; }
         p.quote { width:50vw; }
         div.data { margin-left:15vw; }
         div.data img { display:block; width:10vw; margin-right:2vw; }
-
+        #menu-container img { width:50%; cursor:pointer; }
     }
 
 </style>
 <body>
 
 <header>
+    <div id="menu-container">
+        <img src="imgs/menu.png" alt="hamburger-menu">
+        <ul id="menu"> </ul>
+        
+    </div>
+
+
     <h1>Boeken</h1>
     <p>Op deze pagina geef ik korte beschrijvingen van de boeken die ik heb gelezen. Van sommige boeken geef ik ook meer uitgebreide recenties; het idee van dit overzicht is dat het een korte chronologische weerslag vormt van de titels die in de tijd langskomen.</p>
 </header>
@@ -421,10 +465,38 @@ Uitgelezen: 4 januari 2022<br/>
     
 </body>
 <script>
+    function change(id){ 
+        const link = `${window.location.origin}${window.location.pathname}#${id}`
+        const menu = document.getElementById('menu')
+        menu.classList.remove('animate-open')
+        menu.classList.add('animate-close')
+        document.location = link
+    }
+
+
     document.querySelectorAll('h2').forEach( h => h.addEventListener('click', evt => {
         let link = evt.target.innerHTML.toLocaleLowerCase().replace(/[,-]/g,'')
         link = link.replace(/  */g,'-')
         document.location = document.location.href.match(/(^[^#]*)/)[0] + `#${link}`
     }))
+
+    document.querySelectorAll('section').forEach ( s => {
+        const title = s.querySelector('h2').innerHTML
+        document.getElementById('menu').innerHTML 
+            += `<li onclick="change('${s.id}')">${title}</li>`
+        
+    })
+
+    document.querySelector('#menu-container img').addEventListener('click', e => {
+        const menu = document.getElementById('menu')
+        const op = getComputedStyle(menu).getPropertyValue('opacity')
+        if (op == 1) {
+            menu.classList.remove('animate-open')
+            menu.classList.add('animate-close')
+        } else {
+            menu.classList.remove('animate-close')
+            menu.classList.add('animate-open')
+        }
+    })
 </script>
 </html>
