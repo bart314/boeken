@@ -11,15 +11,35 @@
 
 <header>
     <div id="menu-container">
-        <img src="imgs/menu.png" alt="hamburger-menu">
+        <img src="imgs/menu.jpeg" alt="hamburger-menu">
         <ul id="menu"> </ul>
-        
     </div>
 
 
     <h1>Boeken</h1>
     <p>Op deze pagina geef ik korte beschrijvingen van de boeken die ik heb gelezen. Van sommige boeken geef ik ook meer uitgebreide recenties; het idee van dit overzicht is dat het een korte chronologische weerslag vormt van de titels die in de tijd langskomen.</p>
 </header>
+
+<section id="à-laube-spirituelle-de-lhumanité">
+    <h2>À l'Aube Spirituelle de l'Humanité</h2>
+    <p>Dit boekje had ik al geruime tijd in huis (als ik me niet vergis, kocht ik het ooit in Nice in 2019) en ik was er ooit al eens aan begonnen maar toen niet verder dan ongeveer de helft gekomen. Maar omdat het onderwerp superinteressant is, en omdat het goed is voor je Frans om af en toe een Franstalig boek te lezen, ben ik afgelopen najaar hier opnieuw in begonnen en heb het tussen de bedrijven door uit weten te lezen.</p>
+<p><a href="https://fr.wikipedia.org/wiki/Marcel_Otte">Marcel Otte</a> kende ik van <a href="https://link.springer.com/chapter/10.1007/978-0-387-76487-0_35">een artikel</a> waar ik regelmatig aan refereer, met name wanneer het gaat over de overgang van een horizontale naar een verticale metafysica. Hij is een Belgische archeoloog annex paleoantropoloog die, volgens mij zonder het te weten, een behoorlijk wijsgerige agenda heeft; zijn onderzoek gaat namelijk over de culturele veranderingen die plaatsvonden tijdens het einde van het paleolithicum. Of eigenlijk gaat het over de vraag waaróm die culturele veranderingen plaatsvonden toen ze plaatsvonden – en waarvan we tegenwoordig zeggen dat ze het epipaleolithicum definiëren (in plaats van andersom).</p>
+<p>Dit boekje pas in diezelfde traditie, hoewel hij hier de volledige menselijke en breder primatologische geschiedenis in ogenschouw neemt. Het werk cirkelt rondom twee centrale thema's. Allereerst de klimatologische veranderingen die ervoor zorgden dat onze verre voorouders de beboste omgeving verlieten en leerden op de steppen te overleven. De aanpassingen van het skelet, het georiënteerd zijn op wijde vlakten en de veranderingen in het dieet zorgden ervoor dat er een grotere noodzaak tot samenwerking en vooruitdenken ontstond. Al deze ontwikkelingen samen leidden tot het ontstaan van taal en de creatie van een mentaal model van zowel de nabije omgeving als de toekomst.</p>
+<p>Het tweede centrale thema is de plasticiteit van de cultuur. Zijn observatie is dat dat fysieke omgeving van de mens niet (of nauwelijks) aanpasbaar is, en ook zijn biologische opbouw staat redelijk vast. Toch is het de mens gelukt om zich in alle uithoeken van de aarde te vestigen. Dit kan doordat de cultuur als het ware een interface vormt tussen de biologische gesteldheid en de fysieke gegevenheid:</p>
+<p class="quote">Tous les environments traversés et conquis durant ces quelques millions d'années par l'homme attestent de cette puissance adaptive, basculée uniquement du côte culturelle. (p.89)</p>
+<p>Otte schrijft fraai, op een onderhoudende en informatieve wijze, en is (vanzelfsprekend) goed op de hoogte van de stand van zaken van zijn vakgebied. Wel heeft hij soms de neiging om in herhaling te vervallen, of juist in te gedetailleerde beschrijving van tijdperken (met name in hoofdstuk 8, Défier la nature, dat met 28 pagina's – op een gemiddelde van 16 – ook verreweg het langst is). </p>
+<p>Het is jammer dat Otte de wijsgerige traditie die zich eigenlijk met hetzelfde bezighoudt onvoldoende kent: te vaak schreef ik de naam van een denker of zelfs een hele wijsgerige denkrichting in de kantlijn. Het zou werkelijk interessant zijn om deze twee vakgebieden dichter bij elkaar te brengen.</p>
+<p>Al met al is dit een zeer lezenswaardig en informatief boekje waar ik ongetwijfeld nog dikwijls op zal teruggrijpen. Het is voorzien van goede en ter zake doende illustraties en een redelijke literatuurlijst (die overigens niet volledig is). Zoals blijkbaar gebruikelijk in Franstalige wetenschappelijke literatuur ontbreekt een goede index, maar in dit geval is dat iets minder irritant dan normaliter.</p>
+
+<div class="data">
+    <img src="imgs/aube-spirituelle.jpeg" alt="Cover van het boek">
+    Marcel Otte: À l'Aube Spirituelle de l'humanité. Une Nouveau Approche de la Préhistoire.<br/>
+    Paris:Odile Jacob, 2012<br/>
+    180 pagina's<br/>
+    Uitgelezen:4 december 2022
+</div>
+
+</section><!-- à-l'aube-spirituelle-de-l'humanité -->
 
 <section id="het-gebroken-huis">
     <date><span>november 2022</span></date>
@@ -500,6 +520,8 @@ Uitgelezen: 4 januari 2022<br/>
     document.querySelectorAll('h2').forEach( h => h.addEventListener('click', evt => {
         let link = evt.target.innerHTML.toLocaleLowerCase().replace(/[,-]/g,'')
         link = link.replace(/  */g,'-')
+        link = link.replace(/'/g,'')
+        console.log(link)
         document.location = document.location.href.match(/(^[^#]*)/)[0] + `#${link}`
     }))
 
