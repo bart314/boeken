@@ -1,6 +1,7 @@
     h1, h2 { font-family: 'Merriweather', serif;}
     h1 { font-size:2rem; text-align:center;}
-    h2 {  font-size:2rem; font-weight:100; line-height:1.5em; letter-spacing:.06em; text-align:center; margin:0; padding-bottom:1rem; border-bottom:solid lightgray 1px; border-top:solid lightgray 1px; cursor:pointer; }
+    h2 {  position:relative; font-size:2rem; font-weight:100; line-height:1.5em; letter-spacing:.06em; text-align:center; margin:0; padding:1rem; border-bottom:solid lightgray 1px; border-top:solid lightgray 1px; cursor:pointer; }
+    h2.month::before { content:attr(data-month); position:absolute; left:50%; transform:translate(-50%,0); top:-1.6rem; z-index:9; font-size:1.2rem; width:200px; background:white; }
     h2:hover { color:gray; }
     date { color:gray; display:block; font-family:Georgia, 'Times New Roman', Times, serif;  font-size:1.2rem; position:relative; text-align:center; z-index:1; }
     date span { background-color: white; padding:0 2vw; }
@@ -17,7 +18,7 @@
     a:hover { text-decoration:underline; }
 
     #menu-container { width:8vw; position:fixed; top:1vh; left:5vw; z-index:9; }
-    #menu-container img { width:100%; cursor:pointer; }
+    #menu-container img { width:100%; cursor:pointer;}
     #menu { position:fixed; top:5vh; left:1vw; background-color:white; z-index:9;
         white-space:nowrap;
         overflow-x:hidden;
