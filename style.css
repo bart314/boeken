@@ -9,12 +9,15 @@
     date span { background-color: white; padding:0 2vw; }
     date:before { content:""; position:absolute; top:12px; left:0; width:100%; z-index:-1; }
 
-    p, ul, ol { font-family:Georgia, 'Times New Roman', Times, serif; font-size:1.3rem; line-height:1.5em; width:80vw; margin-left:5vw; }
+    p, ul, ol, table { font-family:Georgia, 'Times New Roman', Times, serif; font-size:1.3rem; line-height:1.5em; width:80vw; margin-left:5vw; }
     p.quote { font-style:italic; width:80vw; margin:auto; position: relative;}
     p.quote::before { content:open-quote; position:absolute; left:-3.5rem; top:2rem; font-size:8rem; color:lightgray; }
 
     div.data { display:flex; align-items:center; line-height:1.1em; color:gray; font-style:italic; margin-left:5vw; margin-bottom:8vh; }
     div.data img { display:none; }
+
+    table { width:60vw; margin:0 auto; }
+
 
     a { text-decoration:none; }
     a:hover { text-decoration:underline; }
