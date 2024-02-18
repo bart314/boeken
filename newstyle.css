@@ -1,0 +1,20 @@
+:root {
+    --sidebar-color:#797960;
+}
+
+section { display:flex; }
+div.sidebar { width:25vw; position:fixed; right:5vw; color:var(--sidebar-color); }
+div.sidebar p { font-size:1em; margin:8px 0; }
+div.sidebar h3 { margin-bottom:0; }
+div.data p:first-child { text-align:center; }
+div.content { width:60vw; margin-left:5vw; text-align:justify; }
+
+#toc { display:flex; }
+#toc div { width:50%; cursor:pointer; }
+
+div.sidebar img { width:50%; }
+p, ul, ol, table { font-family:Georgia, 'Times New Roman', Times, serif; font-size:1.3rem; line-height:1.5em; }
+p.quote { font-style:italic;  margin:0 3vw; position: relative; color: var(--sidebar-color); }
+p.quote::before { content:open-quote; position:absolute; left:-3.5rem; top:2rem; font-size:8rem; color:lightgray; }
+
+img {box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }

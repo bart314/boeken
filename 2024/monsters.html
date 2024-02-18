@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boeken: Monsters</title>
+    <link rel="stylesheet" href="../newstyle.css">
+</head>
+<body>
+
+<section id="monsters">
+    <div class="content" id="test">
+        <h1>Monsters</h1>
+<p>Ik las (denk ik) in de Groene Amsterdammer een korte aankondiging over <a href="https://www.groene.nl/podcasts/boeken-fm/afleveringen/mogen-we-hier-nog-wel-naar-kijken-claire-dederer-monsters">de boeken-fm-podcast over dit boek</a> en hoewel ik de podcast (nog) niet heb beluisterd, leek het me een aardig werk om te lezen. De vraag of we de kunst van verkeerde mensen nog kunnen waarderen komt in verschillende vormen met enige regelmaat terug in m'n onderwijs en ik wilde hier sowieso al een tijdje langer in duiken, dus dit leek me een goede eerste stap.</p>
+<p>Het boek combineert een autobiografische zoektocht met een journalistieke schrijfstijl. Hierdoor mist het wellicht in kunstfilosofische of psychologische diepte, maar dit wordt goedgemaakt door het brede scala van voorbeelden die worden behandeld – en alleen daarom al is het een leerzaam boek. In eerste instantie lijkt het erop dat er in elk hoofdstuk een verkeerde kunstenaar behandeld wordt, maar na een hoofdstuk of twee probeert Dederer toch tot een wat algemenere analyse te komen. Daar doorheen lijken de hoofdstuktitels een indeling rondom verschillende actoren binnen dit vraagstuk te reflecteren: The Fan, The Critic, The Genius, The Anti-monster, ...</p>
+<p>De eerste twee hoofdstukken gaan over cineasten: respectievelijk Roman Polański en Woody Allan – Dederer is duidelijk cinematofiel, want Polański loopt als een soort Leitmotiv door het hele boekje door. Hier gaat het met name over Rosemary's Baby en Manhattan, maar ook Chinatown, "often called one of the greatest films of all time" (p. 6). Maar behalve deze twee heeft ze het over Michael Jackson, Bill Cosby, J.K. Rowling en nog zo wat. In alle gevallen lijkt het erop dat Dederer het werk op z'n minst kan waarderen (als ze er al geen uitgesproken van is), maar stelt ze zichzelf toch de vraag of ze dat nog wel kan; of ze het werk los kan zien van de persoon.</p>
+<p>Eigenlijk kom je er als lezer wat berooid vanaf. Ze geeft niet echt een overtuigend antwoord en laat, als gevolg van de schrijfstijl, ook na om een grondige analyse te geven van wat een monster een monster maakt, wat de invloed is van het tijdgewricht en waarom ze zich zo concentreert op de kunsten (en bijvoorbeeld de filosofie buiten beschouwing laat). Veel verder dan anekdotisch bewijs gaat ze niet, bijvoorbeeld wanneer ze Stephen Fry's documentaire over Wagner bespreekt (pp. 112-132). Het beste antwoord dat ze kan geven is 'in spite of everything' – wat nogal onbevredigend is:</p>
+<p class="quote">In other words, there is not some correct answer. You are not responsible for finding it. Your feeling of responsibility is a shibboleth, a reinforcement of your tragically limited role as a consumer. There is no authority and there should be no authority. You are off the hook; you do not need to have a grand unified theory about what to do about Michael Jackson. (p.242)</p>
+<p>Een ander belangrijk kritiekpunt is dat het boek wel wat bevooroordeeld is. Het zijn vooral (witte) mannen die creatief en slecht zijn. Zo ziet ze een specifieke rol weggelegd voor Polański en David Bowie, maar zwijgt ze over bijvoorbeeld Kate Bush of Madonna – toch ook grote artiesten met wat narigheid op hun kerfstok. Indicatief voor dit vooroordeel is dat het hoofdstuk over moeders die hun kinderen achterlaten (<i>Abondaning mothers</i>, H.10) verreweg het langste hoofdstuk uit het boek is (45 pagina's, met een gemiddelde van 18 per hoofdstuk).</p>
+<p>Toch is het wel een leesbaar boek. Niet in de laatste plaats door de vele interessante voorbeelden,  maar ook om twee andere redenen. Allereerst is haar analyse van de vrijheid van monsters boeiend: als je werkelijke een creatief genie bent, en een bepaalde vrijheid nodig hebt om die creativiteit tot uiting te laten komen, waarom zou de samenleving dan de ene vrijheid toestaan en de andere vrijheid verbieden? Als de wereld beter is met de Guernica erin, zouden we dan Picasso niet zijn onhebbelijkheden moeten toestaan?</p>
+<p>Het tweede interessante punt is dat ze zich ook afvraagt of ze zelf wel monsterlijk genoeg is. Is het niet zo dat ware creatieve productie een monsterlijke monomanie vereist? Zoals Joni Mitchell die huis, haard en kinderen achterliet om haar rock-carrière na te streven (p.199), of Gaugin die van zichzelf zei dat hij een groot artiest is (p.168).</p>
+<p>Kortom, als eerste aanzet zeker interessant en een goede bron van voorbeelden om de discussie mee op scherp te zetten. Maar als fundamentele en definitieve analyse onbevredigend.</p>
+    </div><!-- content -->
+
+    <div class="sidebar" id="sidebar">
+        <div class="data">
+            <p><img src="imgs/monsters.jpeg" alt="Cover van het boek"></p>
+            <p>Clair Dederer: Monsters. A Fan's Dilemma</p>
+            <p>Sceptre, 2023</p>
+            <p>257 pagina's, plus nog 15 pagina's noten (helaas geen index)</p>
+            <p>uitgelezen: 3 januari 2024</p>
+        </div>
+
+        <div class="auteur">
+            <h3>Over de Auteur</h3>
+            <p><a href="https://en.wikipedia.org/wiki/Claire_Dederer" target="_blank">Claire Dederer (1967)</a> is kunstcritica die regelmatig schrijft voor de New York Times. Behalve <i>Monsters</i> heeft ze nog een aantal andere boeken geschreven. Dederer woont in Seattle.</p>
+        </div>
+
+        <div id="toc">
+          <div id="prev">
+            <h4>Vorig boek</h4>
+          </div>
+          <div id="next">
+            <h4>Volgend boek</h4>
+            <img src="imgs/werther.jpeg">
+          </div>
+        </div>
+    </div><!-- sidebar -->
+</section><!-- monsters -->
+
+</body>
+
+<script>
+  const el = document.getElementById('test')
+  const data = document.getElementById('sidebar')
+  const factor = data.clientHeight / el.clientHeight
+  
+  document.addEventListener('scroll', () => {
+    data.style.top = 0-factor * document.scrollingElement.scrollTop
+    if (document.scrollingElement.scrollTop >= el.clientHeight - window.innerHeight) {
+        console.log('check')
+    }
+  })
+
+  document.getElementById('next').addEventListener('click', () => document.location = 'die-leiden.html')
+
+
+</script>
+</html>
