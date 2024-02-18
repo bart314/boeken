@@ -8,7 +8,7 @@
 <body>
 
 <section id="monsters">
-    <div class="content" id="test">
+    <div class="content" id="content">
         <h1>Monsters</h1>
 <p>Ik las (denk ik) in de Groene Amsterdammer een korte aankondiging over <a href="https://www.groene.nl/podcasts/boeken-fm/afleveringen/mogen-we-hier-nog-wel-naar-kijken-claire-dederer-monsters">de boeken-fm-podcast over dit boek</a> en hoewel ik de podcast (nog) niet heb beluisterd, leek het me een aardig werk om te lezen. De vraag of we de kunst van verkeerde mensen nog kunnen waarderen komt in verschillende vormen met enige regelmaat terug in m'n onderwijs en ik wilde hier sowieso al een tijdje langer in duiken, dus dit leek me een goede eerste stap.</p>
 <p>Het boek combineert een autobiografische zoektocht met een journalistieke schrijfstijl. Hierdoor mist het wellicht in kunstfilosofische of psychologische diepte, maar dit wordt goedgemaakt door het brede scala van voorbeelden die worden behandeld – en alleen daarom al is het een leerzaam boek. In eerste instantie lijkt het erop dat er in elk hoofdstuk een verkeerde kunstenaar behandeld wordt, maar na een hoofdstuk of twee probeert Dederer toch tot een wat algemenere analyse te komen. Daar doorheen lijken de hoofdstuktitels een indeling rondom verschillende actoren binnen dit vraagstuk te reflecteren: The Fan, The Critic, The Genius, The Anti-monster, ...</p>
@@ -39,7 +39,7 @@
           <div id="prev">
             <h4>Vorig boek</h4>
           </div>
-          <div id="next">
+          <div id="next" onclick="document.location='die-leiden.html'">
             <h4>Volgend boek</h4>
             <img src="imgs/werther.jpeg">
           </div>
@@ -49,20 +49,5 @@
 
 </body>
 
-<script>
-  const el = document.getElementById('test')
-  const data = document.getElementById('sidebar')
-  const factor = data.clientHeight / el.clientHeight
-  
-  document.addEventListener('scroll', () => {
-    data.style.top = 0-factor * document.scrollingElement.scrollTop
-    if (document.scrollingElement.scrollTop >= el.clientHeight - window.innerHeight) {
-        console.log('check')
-    }
-  })
-
-  document.getElementById('next').addEventListener('click', () => document.location = 'die-leiden.html')
-
-
-</script>
+<script src="scroll.js"></script>
 </html>

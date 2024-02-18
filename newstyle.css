@@ -17,4 +17,7 @@ p, ul, ol, table { font-family:Georgia, 'Times New Roman', Times, serif; font-si
 p.quote { font-style:italic;  margin:0 3vw; position: relative; color: var(--sidebar-color); }
 p.quote::before { content:open-quote; position:absolute; left:-3.5rem; top:2rem; font-size:8rem; color:lightgray; }
 
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+
 img {box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
