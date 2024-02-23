@@ -38,7 +38,8 @@ a:hover { text-decoration:underline; }
     height:0;
 }
 
-#menu li:hover { cursor:pointer; text-decoration:underline; }
+#menu li { cursor:pointer; }
+#menu li:hover { text-decoration:underline; }
 
 div.faded-content { max-height: 40vh; position: relative; overflow: hidden; }
 div.faded-content .verder-lezen { position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; margin: 0; padding: 30px 0; background-image: linear-gradient(to bottom, transparent, white); }
