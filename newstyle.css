@@ -2,6 +2,8 @@
     --sidebar-color:#797960;
 }
 
+h1 { text-align:center; font-size:2rem; }
+
 section { display:flex; flex-direction:column; }
 
 div.sidebar { color:var(--sidebar-color); border-top:solid gray 1px; }
