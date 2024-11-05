@@ -28,6 +28,17 @@ a:hover { text-decoration:underline; }
 
 img {box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
+
+#see-also { margin-left:5vw; width:60vw; 
+    font-family:Calibri,Verdana,sans-serif; margin-bottom:3vh; }
+ul.books { display:flex; overflow-y:scroll; justify-content:space-evenly;
+    list-style-type:none; font-family:inherit; }
+#see-also h2 { text-align:center;}
+#see-also li { margin:1vh 2vw; text-align:center; }
+#see-also li div.cover { width:90px; height:140px; overflow:hidden; }
+#see-also li img { width:90px;  }
+#see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; }
+
 @media only screen and (min-width: 768px) {
     section { flex-direction:row; }
     div.sidebar { width:25vw; position:fixed; right:5vw; border-top:none; }

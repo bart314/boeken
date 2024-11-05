@@ -1,10 +1,14 @@
 
 function change(id){ 
     const link = `${window.location.origin}${window.location.pathname}#${id}`
+    close_menu()
+    document.location = link
+}
+
+function close_menu() {
     const menu = document.getElementById('menu')
     menu.classList.remove('animate-open')
     menu.classList.add('animate-close')
-    document.location = link
 }
 
 
@@ -17,12 +21,15 @@ document.querySelectorAll('h2').forEach( h => h.addEventListener('click', evt =>
 
 document.querySelectorAll('section').forEach ( s => {
     const title = s.querySelector('h2').innerHTML
+    const link = `${window.location.origin}${window.location.pathname}#${s.id}`
+
     document.getElementById('menu').innerHTML 
-        += `<li onclick="change('${s.id}')">${title}</li>`
-    
+        += `<li><a href="${link}">${title}</a></li>`
+        
+    s.addEventListener('click', close_menu)
 })
 
-document.querySelector('#menu-container img').addEventListener('click', e => {
+document.getElementById('menu-container').addEventListener('click', e => {
     const menu = document.getElementById('menu')
     const op = getComputedStyle(menu).getPropertyValue('opacity')
     if (op == 1) {

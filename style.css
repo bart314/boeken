@@ -25,8 +25,8 @@ table { width:60vw; margin:0 auto; }
 a { text-decoration:none; color:darkblue }
 a:hover { text-decoration:underline; }
 
-#menu-container { width:8vw; position:fixed; top:1vh; left:5vw; z-index:9; }
-#menu-container img { width:100%; cursor:pointer;}
+#menu-container { width:8vw; position:fixed; top:1vh; left:5vw; z-index:9; cursor:pointer; }
+#menu-container img { width:100%; }
 #menu { position:fixed; top:5vh; left:1vw; background-color:white; z-index:9;
     white-space:nowrap;
     overflow-x:hidden;
