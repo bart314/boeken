@@ -36,8 +36,8 @@ ul.books { display:flex; overflow-y:scroll; justify-content:space-evenly;
 #see-also h2 { text-align:center;}
 #see-also li { margin:1vh 2vw; text-align:center; }
 #see-also li div.cover { width:90px; height:140px; overflow:hidden; }
-#see-also li img { width:90px;  }
-#see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; }
+#see-also li img { width:90px; height:145px; }
+#see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; width:120px; }
 
 @media only screen and (min-width: 768px) {
     section { flex-direction:row; }
