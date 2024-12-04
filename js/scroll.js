@@ -1,5 +1,4 @@
 const mq = window.matchMedia('(min-width: 768px)')
-console.log(mq.matches)
 
 if(mq.matches) {
   const el = document.getElementById('content')
@@ -9,4 +8,13 @@ if(mq.matches) {
   document.addEventListener('scroll', () => {
     data.style.top = 0-factor * document.scrollingElement.scrollTop
   })
+}
+
+//rating
+const rating_el = document.getElementById('rating')
+if (rating_el) {
+  const rating = Number(rating_el.dataset.rating)
+  let html = '🍊'.repeat(rating)
+  html += '<span>' + '🍊'.repeat(5-rating) + '</span>'
+  rating_el.innerHTML = html
 }

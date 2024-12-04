@@ -33,7 +33,7 @@ img {box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
 #see-also { margin-left:5vw; width:60vw; 
     font-family:Calibri,Verdana,sans-serif; margin-bottom:3vh; }
-ul.books { display:flex; overflow-y:scroll; justify-content:space-evenly;
+ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:space-evenly;
     list-style-type:none; font-family:inherit; }
 #see-also h2 { text-align:center;}
 #see-also li { margin:1vh 2vw; text-align:center; }
