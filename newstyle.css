@@ -11,6 +11,7 @@ div.sidebar p { font-size:1em; margin:8px 0; }
 div.sidebar h3 { margin-bottom:0; }
 div.data p:first-child { text-align:center; }
 div.content { margin:2vh 2vw; text-align:justify; }
+div.info { display: none; }
 p#rating { text-align:center; }
 p#rating span { color:transparent; text-shadow:0 0 0 gray;}
 
@@ -46,4 +47,6 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
     div.sidebar { width:25vw; position:fixed; right:5vw; border-top:none; }
     div.content { width:60vw; margin-left:5vw; }
     #toc { margin-bottom:0; }
+    div.info { display:flex; justify-content:space-evenly; font-size:0.5rem;}
+    div.info p { font-size:.8rem; color:gray; }
 }
