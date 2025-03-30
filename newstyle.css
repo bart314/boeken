@@ -25,6 +25,7 @@ p.quote::before { content:open-quote; position:absolute; left:-3.5rem; top:2rem;
 
 div.image { display:flex; justify-content:center; }
 div.image img { width:50%; }
+div.image img.small { height:50vh; width:auto; }
 
 a { text-decoration:none; }
 a:hover { text-decoration:underline; }
