@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boeken – overzicht</title>
+</head>
+<link rel="stylesheet" href="newstyle.css">
+<style>
+    li {
+        display:flex;
+        align-items:center;
+        margin-bottom:2vh;
+        cursor:pointer;
+
+        & img {
+            height:150px;
+            margin-right:4vw;
+        }
+
+        & p:first-child {
+            font-weight:700;
+        }
+    }
+
+    li:hover { background-color:lightgray; }
+
+
+</style>
+<body>
+    <header>
+        <h1>Alle boeken</h1>
+        <form>
+            <input type="text">
+        </form>
+    </header>
+    <div>
+        <ul id="main">
+        </ul>
+    </div>
+    
+    <script>
+        const api_url = (document.location.href.indexOf('localhost') < 0) 
+            ? 'https://mandarin.nl/boeken/' 
+            : 'http://localhost/~bart/boeken/'
+
+        fetch('js/data/boekendata.json')
+        .then(resp => resp.json() )
+        .then( els => els.sort( (a,b) => {
+            if (a.titel > b.titel) return 1
+            else if (a.titel < b.titel) return -1
+            else return 0
+        }))
+        .then( els => {
+            els.forEach ( book => {
+                html = `<li onclick="document.location='${api_url}${book.link}'">
+                    <img src="${api_url}${book.cover}">
+                    <div>
+                    <p>${book.titel}</p>
+                    <p>${book.auteur}</p>
+                    </div>
+                </li>`
+                document.getElementById('main').innerHTML += html
+            })
+        })
+    </script>
+</body>
+</html>
