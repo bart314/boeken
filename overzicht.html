@@ -6,6 +6,24 @@
 </head>
 <link rel="stylesheet" href="newstyle.css">
 <style>
+    header {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding-bottom:3vh;
+
+        & h1, form {
+            margin:0;
+        }
+
+        & input[type='text'] {
+            font-size:28px;
+            border:solid gray 1px;
+            border-radius:5%;
+            padding:8px;
+        }
+    }
+
     li {
         display:flex;
         align-items:center;
@@ -30,7 +48,7 @@
     <header>
         <h1>Alle boeken</h1>
         <form>
-            <input type="text">
+            <input type="text" id="zoekbalk" placeholder="🔎">
         </form>
     </header>
     <div>
@@ -39,6 +57,7 @@
     </div>
     
     <script>
+        var book_data
         const api_url = (document.location.href.indexOf('localhost') < 0) 
             ? 'https://mandarin.nl/boeken/' 
             : 'http://localhost/~bart/boeken/'
@@ -51,17 +70,36 @@
             else return 0
         }))
         .then( els => {
-            els.forEach ( book => {
-                html = `<li onclick="document.location='${api_url}${book.link}'">
+            book_data = els
+            fill_list(els) 
+        })
+
+        document.getElementById('zoekbalk').addEventListener('keyup', evt => {
+            let check = evt.target.value
+            console.log(book_data[0].titel.includes('a'))
+            let data = book_data.filter(el => 
+                    el.titel.toLowerCase().includes(check.toLowerCase()) || 
+                    el.auteur.toLowerCase().includes(check.toLowerCase())
+                )
+            fill_list(data)
+        })
+
+
+        function fill_list(books) {
+            const booklist = document.getElementById('main')
+            let html = ''
+            booklist.innerHTML = html
+            books.forEach ( book => {
+                html += `<li onclick="document.location='${api_url}${book.link}'">
                     <img src="${api_url}${book.cover}">
                     <div>
                     <p>${book.titel}</p>
                     <p>${book.auteur}</p>
                     </div>
                 </li>`
-                document.getElementById('main').innerHTML += html
             })
-        })
+            booklist.innerHTML = html
+        }
     </script>
 </body>
 </html>
