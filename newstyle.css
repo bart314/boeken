@@ -18,6 +18,8 @@ p#rating span { color:transparent; text-shadow:0 0 0 gray;}
 #toc { display:flex; margin-bottom: 5vh; }
 #toc div { width:50%; cursor:pointer; }
 
+#subnav { margin-top:3vh; width:100%; display:flex; justify-content:space-around;}
+
 div.sidebar img { width:50%; }
 p, ul, ol, table { font-family:Georgia, 'Times New Roman', Times, serif; font-size:1.3rem; line-height:1.5em; }
 p.quote { font-style:italic;  margin:0 3vw; position: relative; color: var(--sidebar-color); }

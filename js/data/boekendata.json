@@ -130,7 +130,7 @@
   {
     "nr": 17,
     "titel": "Het Internet is stuk",
-    "cover": "imgs/internet-is-stuk",
+    "cover": "imgs/internet-is-stuk.jpeg",
     "link": "2022.html#het-internet-is-stuk",
     "auteur": "Marleen Stikker",
     "taal": "NL"
@@ -146,7 +146,7 @@
   {
     "nr": 19,
     "titel": "Het gebroken huis",
-    "cover": "imgs/het-gebroken-huis",
+    "cover": "imgs/het-gebroken-huis.jpeg",
     "link": "2022.html#het-gebroken-huis",
     "auteur": "Horst Krüger",
     "taal": "NL"
@@ -518,5 +518,13 @@
     "link": "2025/bismarcks-war.html",
     "auteur": "Rachel Chrastil",
     "taal": "EN"
+  },
+  {
+    "nr": 66,
+    "titel": "Wij van de Ripetta",
+    "cover": "2025/imgs/ripetta.jpeg",
+    "link": "2025/ripetta.html",
+    "auteur": "Tomas Lieske",
+    "taal": "NL"
   }
 ]
