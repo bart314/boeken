@@ -526,5 +526,13 @@
     "link": "2025/ripetta.html",
     "auteur": "Tomas Lieske",
     "taal": "NL"
+  },
+  {
+    "nr": 67,
+    "titel": "Playing Possum",
+    "cover": "2025/imgs/playing-possum.jpeg",
+    "link": "2025/playing-possum.html",
+    "auteur": "Susana Monsó",
+    "taal": "EN"
   }
 ]
