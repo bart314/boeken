@@ -10,7 +10,7 @@ Promise.all([
     if (recs.length > 0) {
         const api_url = (document.location.href.indexOf('localhost') < 0) 
             ? 'https://mandarin.nl/boeken/' 
-            : 'http://localhost/~bart/boeken/'
+            : 'http://localhost:8008/'
 
         console.log(api_url)
 

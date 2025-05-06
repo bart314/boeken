@@ -1,5 +1,8 @@
 const fs = require("fs");
+const jsdom = require("jsdom")
+const { JSDOM } = jsdom;
 
+console.log('Checken van alle waarden en dergelijke...')
 const args = process.argv.slice(2) 
 const titel = args[0]
 if (titel==null) {
@@ -19,8 +22,24 @@ if (fs.existsSync(`${dir}/${titel_intern}.html`)) {
     process.exit()
 }
 
+console.log('Waarden samenstellen...')
+const link = `${dir}/${titel_intern}.html`
 const vandaag = new Intl.DateTimeFormat("nl-NL", {dateStyle:"full"}).format(new Date())
+const boekendata = JSON.parse(fs.readFileSync('js/data/boekendata.json', 'utf8'));
+const prev = boekendata[boekendata.length - 1]
+const id = prev.nr + 1
+const nieuwe_data = {
+        "nr": id,
+        "titel": titel,
+        "cover": `${dir}/imgs/${titel_intern}.jpeg`,
+        "link": link,
+        "auteur": "NOG INVULLEN",
+        "taal": "NOG INVULLEN"
+}
+boekendata.push(nieuwe_data)
+fs.writeFileSync('js/data/boekendata.json', JSON.stringify(boekendata), 'utf8')
 
+console.log('Nieuw bestand maken')
 const template = `
 <html lang="nl">
 <head>
@@ -34,7 +53,7 @@ const template = `
 <section id="${titel_intern}">
   <div class="content" id="content">
     <div class="info">
-      <p>Verslag nummer 67</p>
+      <p>Verslag nummer ${id}</p>
       <p>Toegevoegd op ${vandaag}</p>
       <p>AANTAL WOORDEN</p>
     </div>
@@ -46,7 +65,7 @@ const template = `
     <div class="data">
         <p><img src="imgs/${titel_intern}.jpeg" alt="Cover van het boek"></p>
         <p id="rating" data-rating="3"></p>
-        <p>TITEL HIER</p>
+        <p>${titel}</p>
         <p>UITGEVERIJ EN JAARTAL</p>
         <p>AANTAL PAGINA'S</p>
         <p>UITGELEZEN</p>
@@ -58,9 +77,9 @@ const template = `
     </div>
 
     <div id="toc">
-      <div id="prev" onclick="document.location='ripetta.html'">
+      <div id="prev" onclick="document.location='${prev.link.replaceAll(`${dir}/`, '')}'">
         <h4>Vorig boek</h4>
-        <img src="imgs/ripetta.jpeg">
+        <img src="${prev.cover.replaceAll(`${dir}/`, '')}">
       </div>
       <div id="next">
         <h4>Volgend boek</h4>
@@ -71,7 +90,7 @@ const template = `
 </div><!-- sidebar -->
 </section>
 
-<div id="see-also" data-nummer="67"> </div><!-- see-also -->
+<div id="see-also" data-nummer="${id}"> </div><!-- see-also -->
 
 <script src="../js/inject-see-also.js"></script>
 <script src="../js/scroll.js"></script>
@@ -79,5 +98,19 @@ const template = `
 </body>
 </html>
 `
+fs.writeFileSync(link, template)
 
-fs.writeFileSync(`${dir}/${titel_intern}.html`, template)
+console.log('Link naar volgend boek in vorig boek zetten...')
+const doc = fs.readFileSync(prev.link, 'utf8')
+const dom = new JSDOM(doc.toString())
+
+// Uitgaande van dezelfde directory...
+dom.window.document.getElementById('next').outerHTML = `
+  <!-- gegenereerde code... -->
+  <div id="next" onclick="document.location='${titel_intern}.html'">
+    <h4>Volgend boek</h4> 
+    <img src="imgs/${titel_intern}.jpeg">
+  </div>
+`
+fs.writeFileSync(prev.link, dom.serialize(), 'utf8')
+console.log('klaar.')
