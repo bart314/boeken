@@ -90,7 +90,7 @@
             let html = ''
             booklist.innerHTML = html
             books.forEach ( book => {
-                html += `<li onclick="document.location='${api_url}${book.link}'">
+                html += `<li onclick="document.location='${api_url}${book.link}'" data-book-id="${book.nr}">
                     <img src="${api_url}${book.cover}">
                     <div>
                     <p>${book.titel}</p>

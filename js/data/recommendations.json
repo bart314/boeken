@@ -1,6 +1,7 @@
 [
     { "nr":65, "recommendations":[60, 54, 30] },
     { "nr":67, "recommendations":[45, 46] },
-    { "nr":68, "recommendations":[33, 37, 38, 47, 58] }
+    { "nr":68, "recommendations":[33, 37, 38, 47, 58] },
+    { "nr":69, "recommendations":[3, 44, 48, 31] }
 ]
 
