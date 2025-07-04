@@ -58,4 +58,5 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
     div.info { display:flex; justify-content:space-evenly; font-size:0.5rem;}
     div.info p { font-size:.8rem; color:gray; }
     table.widetable { width:100%; }
+    div.image img { max-height:50vh;width:auto; }
 }
