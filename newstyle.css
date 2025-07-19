@@ -27,6 +27,7 @@ p#rating span { color:transparent; text-shadow:0 0 0 gray;}
 
 div.sidebar img { width:50%; }
 p, ul, ol, table { font-family:Georgia, 'Times New Roman', Times, serif; font-size:1.3rem; line-height:1.5em; }
+p.small { font-size:small; }
 p.quote { font-style:italic;  margin:0 3vw; position: relative; color: var(--sidebar-color); }
 p.quote::before { content:open-quote; position:absolute; left:-3.5rem; top:2rem; font-size:8rem; color:lightgray; }
 
