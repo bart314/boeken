@@ -60,7 +60,7 @@
         var book_data
         const api_url = (document.location.href.indexOf('localhost') < 0) 
             ? 'https://mandarin.nl/boeken/' 
-            : 'http://localhost:8008/'
+            : 'http://localhost:8000/'
 
         fetch('js/data/boekendata.json')
         .then(resp => resp.json() )
@@ -76,7 +76,6 @@
 
         document.getElementById('zoekbalk').addEventListener('keyup', evt => {
             let check = evt.target.value
-            console.log(book_data[0].titel.includes('a'))
             let data = book_data.filter(el => 
                     el.titel.toLowerCase().includes(check.toLowerCase()) || 
                     el.auteur.toLowerCase().includes(check.toLowerCase())

@@ -12,12 +12,9 @@ Promise.all([
             ? 'https://mandarin.nl/boeken/' 
             : 'http://localhost:8008/'
 
-        console.log(api_url)
-
         let html = '<h2>Bekijk ook eens</h2><ul class="books">'
         recs[0]['recommendations'].forEach( r => {
             const book = boeken.filter ( b => b.nr == r)[0]
-            console.log(book)
             html += `<li><a href="${api_url}${book.link}">`
             html += `<img src="${api_url}${book.cover}" alt="Cover van het boek">`
             html += `<p>${book.titel}</p>`

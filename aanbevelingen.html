@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="newstyle.css">
+<style>
+    * { padding:0; margin:0; }
+    p { font-size:smaller; }
+
+    #header { 
+        position:fixed; 
+        background-color:white;
+        padding:2vw 2vh;
+        height:10vh;
+        border-bottom:dotted gray 1px;
+    }
+
+    #labels { padding-top:20vh; }
+
+    label {
+        display:flex;
+        width:90vw;
+        padding:2vh 2vw;
+        margin-right:2vw;
+        overflow-x:hidden;
+
+        align-items:center;
+        justify-content:space-between;
+
+        border-bottom:dotted gray 1px;
+        & img {
+            width:10vw;
+        }
+    }
+    label:hover { background-color:lightblue; }
+
+    select {
+      border: 2px solid #ddd;
+      background: #eee;
+      padding: 10px;
+      transition: 0.4s;
+    }
+
+    #sbmt {
+        width:10vw;
+        margin-left:4vw;
+        color:white;
+        font-weight:bold;
+        background-color:green;
+        cursor:pointer;
+    }
+
+    div.center {
+        width:100vw;
+        overflow-x:hidden;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    @media screen and (min-width:720px) {
+        label { width:initial; }
+        #labels {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    #result {
+        display:none;
+        width:100vw;
+        height:100vh;
+
+        & div {
+            width:50vw;
+            height:50vh;
+            border:solid darkgray 1px;
+            font-family:menlo,monotype;
+            padding:1vh 1vw;
+        }
+    }
+
+
+
+
+</style>
+</head>
+
+<body>
+    <div id="result" class="center">
+        <div>
+            allemaal dingen
+
+        </div>
+    </div>
+
+    <form action="">
+        <div id="header" class="center">
+            <select name="current" id="current"> </select>
+            <button type="button" id="sbmt">Go</button>
+        </div>
+        <div id="labels"></div>
+    </form>
+    
+    <script src="js/edit-see-also.js"> </script>
+</body>
+</html>
