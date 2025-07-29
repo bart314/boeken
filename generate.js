@@ -68,7 +68,7 @@ const template = `
         <p>${titel}</p>
         <p>UITGEVERIJ EN JAARTAL</p>
         <p>AANTAL PAGINA'S</p>
-        <p>UITGELEZEN</p>
+        <p>Uitgelezen: </p>
     </div>
 
     <div class="auteur">
