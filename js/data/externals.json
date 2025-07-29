@@ -10,5 +10,20 @@
             "titel":"The American Holocaust",
             "cover":"https://www.bartbarnard.nl/blog/wp-content/uploads/2021/07/american-holocaust.jpeg"
         }
+    ]},
+
+    {"nr":58, "recommendations":[
+        {
+            "link":"https://www.bartbarnard.nl/blog/american-holocaust/",
+            "titel":"The American Holocaust",
+            "cover":"https://www.bartbarnard.nl/blog/wp-content/uploads/2021/07/american-holocaust.jpeg"
+        }
+    ]},
+    {"nr":57, "recommendations":[
+        {
+          "link":"https://mandarin.nl/dreadnought/",
+          "titel":"Dreadnought", 
+          "cover":"https://mandarin.nl/dreadnought/static/imgs/cover.png"
+        }
     ]}
 ]
