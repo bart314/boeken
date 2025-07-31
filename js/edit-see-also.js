@@ -50,8 +50,10 @@ function add_entry(data, new_entry){
 
     // aanpassen van de gerefereerde boeken
     new_entry.recommendations.forEach( r => {
-        if (idx.has(r)) idx.get(r).recommendations.push(new_nr)
-        else idx.set(r, {nr:r, recommendations:[new_nr]})
+        if (idx.has(r)) {
+            // dubbelingen voorkomen...
+            if (!idx.get(r).recommendations.includes(new_nr)) idx.get(r).recommendations.push(new_nr)
+        } else idx.set(r, {nr:r, recommendations:[new_nr]})
     })
 
     // aanpassen van het refererende boek
