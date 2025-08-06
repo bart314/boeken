@@ -25,5 +25,12 @@
           "titel":"Dreadnought", 
           "cover":"https://mandarin.nl/dreadnought/static/imgs/cover.png"
         }
+    ]},
+    {"nr":76, "recommendations":[
+        {
+          "link":"https://mandarin.nl/dreadnought/",
+          "titel":"Dreadnought", 
+          "cover":"https://mandarin.nl/dreadnought/static/imgs/cover.png"
+        }
     ]}
 ]

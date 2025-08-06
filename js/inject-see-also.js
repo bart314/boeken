@@ -3,7 +3,7 @@ let links = [
     fetch('../js/data/recommendations.json')
 ]
 const see_also = document.getElementById('see-also')
-if ([57,58, 61].includes(Number(see_also.dataset.nummer))) links.push(fetch('../js/data/externals.json')) 
+if ([57,58,61,76].includes(Number(see_also.dataset.nummer))) links.push(fetch('../js/data/externals.json')) 
 
 
 Promise.all(links)
