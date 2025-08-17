@@ -1,6 +1,12 @@
 const fs = require("fs");
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom;
+const crypto = require('crypto')
+const dotenv = require('dotenv')
+const path = require('path')
+p
+dotenv.config({ path: path.resolve('./.env') });
+const secret = process.env.SECRET_KEY;
 
 console.log('Checken van alle waarden en dergelijke...')
 const args = process.argv.slice(2) 
@@ -36,6 +42,11 @@ const nieuwe_data = {
         "auteur": "NOG INVULLEN",
         "taal": "NOG INVULLEN"
 }
+const signature = crypto
+  .createHmac("sha256", secret)
+  .update(titel_intern)
+  .digest("hex");
+
 boekendata.push(nieuwe_data)
 fs.writeFileSync('js/data/boekendata.json', JSON.stringify(boekendata), 'utf8')
 
@@ -53,6 +64,7 @@ const template = `
 <section id="${titel_intern}">
   <div class="content" id="content">
     <div class="info">
+      <img class="img-beacon" src="/php/teller.php?file=${titel_intern}.html&sig=${signature}" alt="">
       <p>Verslag nummer ${id}</p>
       <p>Toegevoegd op ${vandaag}</p>
       <p>AANTAL WOORDEN</p>
