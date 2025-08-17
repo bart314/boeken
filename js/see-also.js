@@ -5,4 +5,3 @@ els.forEach( book => {
   html += `<p>${book.dataset.titel}</p>`
   book.innerHTML = html
 })
-

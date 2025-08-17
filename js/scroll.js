@@ -18,3 +18,17 @@ if (rating_el) {
   html += '<span>' + '🍊'.repeat(5-rating) + '</span>'
   rating_el.innerHTML = html
 }
+
+//views
+const fn = document.location.pathname.split('/')[2]
+console.log(fn)
+
+fetch(`../php/views.php?file=${fn}`)
+.then( r => r.json() )
+.then( json => {
+  const aantal = json.total
+  if (aantal > 0) {
+    const el = document.querySelector('div.info')
+    el.innerHTML += `<p>${aantal} &times; getoond (sinds 17 augustus 2025)</p>`
+  }
+})

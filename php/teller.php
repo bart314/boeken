@@ -2,15 +2,7 @@
 require_once('functions.php');
 
 load_env(__DIR__ . '/../.env');
-
-if (!empty($_SERVER['HTTP_REFERER'])) {
-    $refererHost = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
-
-    if (!in_array($refererHost, ['localhost', 'mandarin.nl', 'www.mandarin.nl'])) {
-        http_response_code(403);
-        exit('Forbidden');
-    }
-}
+check_referer();
 
 $secret = $_ENV['SECRET_KEY'] ?? null;
 if (!$secret) {
@@ -53,11 +45,10 @@ try {
 $stmt = $db->prepare("SELECT COUNT(*) FROM counter
 WHERE file = ?
   AND ip = ?
-  AND last_seen >= NOW() - INTERVAL 1 MINUTE");
+  AND last_seen >= NOW() - INTERVAL 5 MINUTE");
 
 $stmt->execute([$file, $ip]);
 $check = $stmt->fetchColumn();
-var_dump($check);
 
 if($check > 0) {
     exit;
