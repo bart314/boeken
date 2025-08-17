@@ -2,5 +2,6 @@
   "dependencies": {
     "dotenv": "^17.2.1",
     "jsdom": "^26.1.0"
-  }
+  },
+  "quiet": true
 }

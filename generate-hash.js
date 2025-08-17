@@ -1,11 +1,9 @@
 const crypto = require('crypto')
 const dotenv = require('dotenv')
-const fs = require('fs')
 const path = require('path')
 
 dotenv.config({ path: path.resolve('./.env') });
 const file = process.argv[2]
-console.log(file)
 if (file == undefined) {
   console.error("Usage: generate-hash.js <filename>") 
   process.exit()
@@ -24,4 +22,4 @@ const sig = crypto
   .update(file)
   .digest("hex");
 
-console.log("Node.js sig:", sig);
+console.log(sig);
