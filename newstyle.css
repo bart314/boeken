@@ -12,6 +12,7 @@ div.sidebar h3 { margin-bottom:0; }
 div.data p:first-child { text-align:center; }
 div.content { margin:2vh 2vw; }
 div.info { display: none; }
+img.img-beacon { display:none; }
 div.table-div { width:100%; overflow-x:scroll; }
 table { border-collapse:collapse;}
 table.widetable { width:150%; }
