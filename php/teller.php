@@ -3,6 +3,15 @@ require_once('functions.php');
 
 load_env(__DIR__ . '/../.env');
 
+if (!empty($_SERVER['HTTP_REFERER'])) {
+    $refererHost = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
+
+    if (!in_array($refererHost, ['localhost', 'mandarin.nl', 'www.mandarin.nl'])) {
+        http_response_code(403);
+        exit('Forbidden');
+    }
+}
+
 $secret = $_ENV['SECRET_KEY'] ?? null;
 if (!$secret) {
     http_response_code(500);
