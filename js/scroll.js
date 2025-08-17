@@ -20,7 +20,7 @@ if (rating_el) {
 }
 
 //views
-const fn = document.location.pathname.split('/')[2]
+const fn = document.location.pathname.split('/').at(-1)
 console.log(fn)
 
 fetch(`../php/views.php?file=${fn}`)
