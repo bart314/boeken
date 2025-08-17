@@ -19,8 +19,7 @@ try {
 
 $file = $_GET['file'];
 
-$stmt = $db->prepare("SELECT COUNT(*) FROM counter
-WHERE file = ? group by ip");
+$stmt = $db->prepare("select count(distinct ip) from counter where file = ?");
 
 $stmt->execute([$file]);
 $res = $stmt->fetchColumn();
