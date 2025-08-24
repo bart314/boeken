@@ -4,7 +4,6 @@ const { JSDOM } = jsdom;
 const crypto = require('crypto')
 const dotenv = require('dotenv')
 const path = require('path')
-p
 dotenv.config({ path: path.resolve('./.env') });
 const secret = process.env.SECRET_KEY;
 
@@ -64,7 +63,7 @@ const template = `
 <section id="${titel_intern}">
   <div class="content" id="content">
     <div class="info">
-      <img class="img-beacon" src="/php/teller.php?file=${titel_intern}.html&sig=${signature}" alt="">
+      <img class="img-beacon" src="../php/teller.php?file=${titel_intern}.html&sig=${signature}" alt="">
       <p>Verslag nummer ${id}</p>
       <p>Toegevoegd op ${vandaag}</p>
       <p>AANTAL WOORDEN</p>

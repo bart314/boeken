@@ -22,6 +22,7 @@ if ($file === '' || $sig === '') {
 $expected = hash_hmac('sha256', $file, $secret);
 
 if (!hash_equals($expected, $sig)) {
+    print ($secret);
     http_response_code(403);
     exit;
 }
