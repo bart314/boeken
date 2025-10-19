@@ -43,7 +43,7 @@ const nieuwe_data = {
 }
 const signature = crypto
   .createHmac("sha256", secret)
-  .update(titel_intern)
+  .update(`${titel_intern}.html`)
   .digest("hex");
 
 boekendata.push(nieuwe_data)
