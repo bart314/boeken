@@ -20,15 +20,16 @@ if (rating_el) {
 }
 
 //views
+const el = document.querySelector('div.info')
+el.innerHTML += '<p id="tmp"><img style="width:30px; box-shadow:none;" src="../imgs/spinner.gif"></p>'
 const fn = document.location.pathname.split('/').at(-1)
-console.log(fn)
 
 fetch(`../php/views.php?file=${fn}`)
 .then( r => r.json() )
 .then( json => {
   const aantal = json.total
   if (aantal > 0) {
-    const el = document.querySelector('div.info')
     el.innerHTML += `<p>${aantal} &times; getoond (sinds 17 augustus 2025)</p>`
   }
+  document.getElementById('tmp').style.display = 'none'
 })
