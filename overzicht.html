@@ -28,12 +28,13 @@
 
         & div.sorteer { color:blue; cursor:pointer; }
         & div.sorteer:hover { text-decoration:underline; }
-        & div.active { font-weight:bold; }
 
         & span.txt {
             display:none;
         }
     }
+
+    div.active { font-weight:bold;}
 
     li {
         display:flex;
@@ -67,9 +68,9 @@
         <form>
             <input type="text" id="zoekbalk" placeholder="🔎">
         </form>
-        <div data-sorteer="titel" class="sorteer active"></a><span class="txt">sorteer op </span>titel</div>
-        <div data-sorteer="auteur" class="sorteer"></a><span class="txt">sorteer op </span>auteur</div>
-        <div data-sorteer="nr" class="sorteer"></a><span class="txt">sorteer op </span>nummer</div>
+        <div class="sorteer active"></a><span data-sorteer="titel" class="txt">sorteer op </span>titel</div>
+        <div class="sorteer"></a><span data-sorteer="auteur" class="txt">sorteer op </span>auteur</div>
+        <div class="sorteer"></a><span data-sorteer="nr" class="txt">sorteer op </span>datum</div>
     </header>
     <div>
         <ul id="main">
@@ -107,10 +108,12 @@
         document.querySelectorAll('div.sorteer').forEach(el => el.addEventListener('click', evt => {
             const the_el = evt.target
             const t = the_el.dataset['sorteer']
-            if (!the_el.classList.contains('active')) {
+            console.log(el)
+            if (!el.classList.contains('active')) {
                 document.querySelectorAll('header div.active').forEach(el => el.classList.remove('active'))
-                the_el.classList.add('active')
+                el.classList.add('active')
                 book_data.sort( (a,b) => {
+                    console.log(t)
                     if (a[t] > b[t]) return 1
                     else if (a[t] < b[t]) return -1
                     else return 0
