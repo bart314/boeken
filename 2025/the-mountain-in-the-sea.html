@@ -84,21 +84,7 @@
 <script src="../js/inject-see-also.js"></script>
 <script src="../js/scroll.js"></script>
 
-<script>
-  const summary = document.querySelector('summary')
-  summary.style.display = 'none'
-  document.querySelector('h2 span').addEventListener('click', el => {
-    if (summary.style.display == 'none') { 
-      summary.style.display = 'block'
-      el.target.innerHTML = '(verbergen)'
-    } else {
-      summary.style.display = 'none'
-      el.target.innerHTML = '(tonen)'
-    }
-
-  })
-
-</script>
+<script src="../js/hide_summary.js"> </script>
     
 
 
