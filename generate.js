@@ -62,7 +62,7 @@ const template = `
 
 <section id="${titel_intern}">
   <div class="content" id="content">
-    <div class="info">
+    <div class="info" data-nr="${id}">
       <img class="img-beacon" src="../php/teller.php?file=${titel_intern}.html&sig=${signature}" alt="">
       <p>Verslag nummer ${id}</p>
       <p>Toegevoegd op ${vandaag}</p>

@@ -21,15 +21,19 @@ if (rating_el) {
 
 //views
 const el = document.querySelector('div.info')
-el.innerHTML += '<p id="tmp"><img style="width:30px; box-shadow:none;" src="../imgs/spinner.gif"></p>'
-const fn = document.location.pathname.split('/').at(-1)
-
-fetch(`../php/views.php?file=${fn}`)
-.then( r => r.json() )
-.then( json => {
-  const aantal = json.total
-  if (aantal > 0) {
-    el.innerHTML += `<p>${aantal} &times; getoond (sinds 17 augustus 2025)</p>`
-  }
-  document.getElementById('tmp').style.display = 'none'
-})
+if (el) {
+  el.innerHTML += '<p id="tmp"><img style="width:30px; box-shadow:none;" src="../imgs/spinner.gif"></p>'
+  const fn = document.location.pathname.split('/').at(-1)
+  
+  fetch(`../php/views.php?file=${fn}`)
+  .then( r => r.json() )
+  .then( json => {
+    const aantal = json.total
+    const nr = el.dataset.nr
+    adding = (nr<77) ? ' (sinds 17 augustus 2025)' : ''
+    if (aantal > 0) {
+      el.innerHTML += `<p>${aantal} &times; getoond${adding}</p>`
+    }
+    document.getElementById('tmp').style.display = 'none'
+  })
+}
