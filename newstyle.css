@@ -32,14 +32,15 @@ p.small { font-size:small; }
 p.quote { font-style:italic;  margin:0 3vw; position: relative; color: var(--sidebar-color); }
 p.quote::before { content:open-quote; position:absolute; left:-3.5rem; top:2rem; font-size:8rem; color:lightgray; }
 
-div.image { display:flex; justify-content:center; }
+div.image { display:flex; justify-content:center; align-items:center;margin-top:1vh; }
 div.image img { width:50%; }
 div.image img.small { height:50vh; width:auto; }
+img {box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
+aside { font-family:Georgia, 'Times New Roman', Times, serif; text-align:center; font-style:italic; padding-top:1vh; color:gray; }
 
 a { text-decoration:none; }
 a:hover { text-decoration:underline; }
 
-img {box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 
 
 #see-also { font-family:Calibri,Verdana,sans-serif; margin-bottom:3vh; }
@@ -60,5 +61,5 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
     div.info { display:flex; justify-content:space-evenly; font-size:0.5rem;}
     div.info p { font-size:.8rem; color:gray; }
     table.widetable { width:100%; }
-    div.image img { max-height:50vh;width:auto; }
-}
+    div.image img { max-height:50vh;width:auto; } }
+    aside { padding:0 10vw; margin-top:1vh; }
