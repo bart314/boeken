@@ -22,12 +22,13 @@ if ($file === '' || $sig === '') {
 $expected = hash_hmac('sha256', $file, $secret);
 
 if (!hash_equals($expected, $sig)) {
-    print ($secret);
+    //print ($secret);
     http_response_code(403);
     exit;
 }
 
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
 
 // Connect to database with credentials from .env
 try {
@@ -55,8 +56,8 @@ if($check > 0) {
     exit;
 }
 
-// Insert log
-$stmt = $db->prepare("INSERT INTO counter (file, ip, last_seen) VALUES (?, ?, NOW())");
-$stmt->execute([$file, $ip]);
+// Insert log en user-agent
+$stmt = $db->prepare("INSERT INTO counter (file, ip, user_agent, last_seen) VALUES (?, ?, ?, NOW())");
+$stmt->execute([$file, $ip, $user_agent]);
 
 http_response_code(204); // no content
