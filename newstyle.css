@@ -52,6 +52,14 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
 #see-also li img { width:90px; height:145px; }
 #see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; width:120px; }
 
+
+
+@media (prefers-color-scheme: dark) {
+    body { background-color:#111; color:gray; }
+    a { color:#927493; }
+    a:hover { color:#99429e; }
+}
+
 @media only screen and (min-width: 768px) {
     section { flex-direction:row; }
     div.sidebar { width:25vw; position:fixed; right:5vw; border-top:none; }

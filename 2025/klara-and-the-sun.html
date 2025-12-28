@@ -16,14 +16,14 @@
       <img class="img-beacon" src="../php/teller.php?file=klara-and-the-sun.html&sig=8b8e34e3c2abb06ba94550d69d194163acafa7225a0b61a6c37300af2ff45415" alt="">
       <p>Verslag nummer 75</p>
       <p>Toegevoegd op donderdag 31 juli 2025</p>
-      <p>1.074 woorden</p>
+      <p id="word-count">641 woorden</p>
     </div>
     <h1>Klara and the Sun</h1>
 
 <p>Dit was het tweede boek dat we lazen vanuit <a href="https://boekenclub.erikroos.org/">onze HBO-ICT boekenclub</a>. Hoewel ik niet bij <a href="https://boekenclub.erikroos.org/#book2">de bespreking daarvan</a> aanwezig was vond ik toch dat ik het, omwille van de volledigheid, gelezen moest hebben. </p>
 
 <h2>Samenvatting <span id="tonen">(tonen)</span></h2>
-<summary>
+<summary data-with="1.074" data-without="641">
 <h3>Dramatis Personae</h3>
 <ul>
 <li>Josie</li>
@@ -96,22 +96,6 @@
 
 <script src="../js/inject-see-also.js"></script>
 <script src="../js/scroll.js"></script>
-<script>
-  const summary = document.querySelector('summary')
-  summary.style.display = 'none'
-  document.querySelector('h2 span').addEventListener('click', el => {
-    if (summary.style.display == 'none') { 
-      summary.style.display = 'block'
-      el.target.innerHTML = '(verbergen)'
-    } else {
-      summary.style.display = 'none'
-      el.target.innerHTML = '(tonen)'
-    }
-
-  })
-
-</script>
+<script src="../js/hide_summary.js"></script>
     
-
-
 </body></html>
