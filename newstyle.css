@@ -55,7 +55,8 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
 
 
 @media (prefers-color-scheme: dark) {
-    body { background-color:#111; color:gray; }
+    body { background-color:#111; color:lightgray; }
+    p.quote { color: gray; }
     a { color:#927493; }
     a:hover { color:#99429e; }
 }
