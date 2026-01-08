@@ -97,7 +97,7 @@ const template = `
       </div>
     </div><!-- toc -->
 
-    <div id="subnav"> <a href="../">2025</a> <a href="../overzicht.html">Alle boeken</a> </div>
+    <div id="subnav"> <a href="../">2026</a> <a href="../overzicht.html">Alle boeken</a> </div>
 </div><!-- sidebar -->
 </section>
 
