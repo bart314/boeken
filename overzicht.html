@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boeken – overzicht</title>
 </head>
-<link rel="stylesheet" href="newstyle.css">
+<link rel="stylesheet" href="styles/newstyle.css">
 <style>
     header {
         display:flex;
@@ -56,8 +56,11 @@
     
     @media (min-width:750px) {
         header span.txt { display:inline; }
+    }
 
-        
+    @media(prefers-color-scheme: dark) {
+      li:hover { background-color:#822659; }
+      header div.sorteer { color:#297493; }
     }
 
 
