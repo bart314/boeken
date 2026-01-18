@@ -5,6 +5,8 @@
 h1 { text-align:center; font-size:2rem; font-family:IrvinHeadingPro,serif; }
 
 section { display:flex; flex-direction:column; }
+h2 span { font-size:smaller; font-weight:normal; color:blue; cursor:pointer;}
+h2 span:hover { text-decoration:underline;}
 
 div.sidebar { color:var(--sidebar-color); border-top:solid gray 1px; display:flex; flex-direction:column; }
 div.sidebar p { font-size:1em; margin:8px 0; }
