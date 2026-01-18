@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Bodoni;
+  src: url('fonts/bodonimoda-variablefont.woff2') format('woff2'),
+       url('fonts/bodonimoda-variablefont.woff') format('woff');
+}
+
+@font-face {
+  font-family: Bodoni;
+  src: url('fonts/bodonimoda-italic-variablefont.woff2') format('woff2'),
+       url('fonts/bodonimoda-italic-variablefont.woff') format('woff');
+  font-style: italic;
+}
+
+@font-face {
+    font-family: Italiana;
+    src: url('fonts/italiana-regular.woff') format('woff');
+}
+
+p { font-family: Bodoni, Georia, serif;}
+h1, h2 { font-family: Italiana, Georgia, serif; }
