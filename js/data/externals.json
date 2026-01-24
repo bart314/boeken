@@ -32,5 +32,17 @@
           "titel":"Dreadnought", 
           "cover":"https://mandarin.nl/dreadnought/static/imgs/cover.png"
         }
+    ]},
+    {"nr":89, "recommendations":[
+        {
+          "link":"https://www.bartbarnard.nl/blog/the-collector-of-lives/",
+          "titel":"The Collector of Lifes", 
+          "cover":"https://www.bartbarnard.nl/blog/wp-content/uploads/2021/12/collector_lives.png"
+        },
+        {
+          "link":"https://mandarin.nl/timeline/",
+          "titel":"Renaissance Timeline", 
+          "cover":"imgs/renaissance-timeline.jpeg"
+        }
     ]}
 ]

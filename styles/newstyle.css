@@ -34,7 +34,7 @@ p.small { font-size:small; }
 p.quote { font-style:italic;  margin:0 3vw; position: relative; color: var(--sidebar-color); }
 p.quote::before { content:open-quote; position:absolute; left:-3.5rem; top:2rem; font-size:8rem; color:lightgray; }
 
-div.image { display:flex; justify-content:center; align-items:center;margin-top:1vh; }
+div.image { display:flex; justify-content:center; flex-direction:column; align-items:center;margin-top:1vh; }
 div.image img { width:50%; }
 div.image img.small { height:50vh; width:auto; }
 img {box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }

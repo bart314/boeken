@@ -56,7 +56,8 @@ const template = `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boeken – ${titel}</title>
-    <link rel="stylesheet" href="../newstyle.css">
+    <link rel="stylesheet" href="../styles/newstyle.css">
+    <link rel="stylesheet" href="../styles/2026.css">
 </head>
 <body>
 
