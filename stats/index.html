@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart with D3.js</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+      .bar {
+        fill: steelblue;
+      }
+
+      .bar:hover {
+        fill: orange;
+      }
+
+      .axis-label {
+        font-size: 12px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Bar Chart Example</h1>
+    <svg id="dagengraph" width="600" height="400"></svg>
+    <svg id="urengraph" width="600" height="400"></svg>
+
+    <script src="data.js"></script>
+    <script>
+      const margin = {
+          top: 20,
+          right: 30,
+          bottom: 40,
+          left: 40
+        },
+        width = 600 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+      // Append the svg object to the body of the page
+      const svg = d3.select("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      // X axis
+      const x = d3.scaleBand()
+        .range([0, width])
+        .domain(dagen.map(d => d.dag))
+        .padding(0.2);
+      svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+        .attr("transform", "translate(-10,0)rotate(-45)")
+        .style("text-anchor", "end")
+        .attr("class", "axis-label");
+
+      // Add Y axis
+      const y = d3.scaleLinear()
+        .domain([0, 50])
+        .range([height, 0]);
+      svg.append("g")
+        .call(d3.axisLeft(y))
+        .selectAll("text")
+        .attr("class", "axis-label");
+
+      // Bars
+      svg.selectAll("urengraph")
+        .data(dagen)
+        .join("rect")
+        .attr("x", d => x(d.dag))
+        .attr("y", d => y(d.aantal))
+        .attr("width", x.bandwidth())
+        .attr("height", d => height - y(d.value))
+        .attr("class", "bar");
+
+    </script>
+  </body>
+
+</html>
