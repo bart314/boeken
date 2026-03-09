@@ -4,80 +4,85 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar Chart with D3.js</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <title>Boeken - statistieken</title>
+    <link rel="stylesheet" href="../styles/newstyle.css">
     <style>
-      .bar {
-        fill: steelblue;
-      }
-
-      .bar:hover {
-        fill: orange;
-      }
-
-      .axis-label {
-        font-size: 12px;
-      }
-
     </style>
   </head>
 
   <body>
-    <h1>Bar Chart Example</h1>
-    <svg id="dagengraph" width="600" height="400"></svg>
-    <svg id="urengraph" width="600" height="400"></svg>
+    <header>
+      <h1>Boeken – statistieken</h1>
+      <p>Sinds 2022 schrijf ik kleine (en soms iets uitgebreidere) besprekingen van de boeken die ik lees. In die tijd zijn er behoorlijk wat verslagen verschenen, en het leek me leuk daar ook een statistische beschrijving van te geven. Omdat dit best een klusje is, en de data ook weer niet <i>zo</i> hard verandert, doe ik dit eens per jaar. De analyse hieronder beslaat de jaren 2022-2025.</p>
+    </header>
 
-    <script src="data.js"></script>
-    <script>
-      const margin = {
-          top: 20,
-          right: 30,
-          bottom: 40,
-          left: 40
-        },
-        width = 600 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+    <section id="stats">
+      <h2>De boeken</h2>
+      <p>In die tijd heb ik in totaal 85 boekenverslagen geschreven – eigenlijk van 86, maar ik heb in deze analyses <a href="../2022.html#de-mooiste-van-ungaretti">mijn verslag van <em>Het mooste van Ungaretti</em></a> genegeerd, omdat ik verder ook geen verslagen van dichtbundels heb gemaakt (omdat dat ook een beetje onzin is, natuurlijk). Het eerste verlag gaat over <a href="../2022.html#theopoëzie"><em>Theopoëzie</em> van Peter Sloterdijk</a>, het laatste is van <a href="../2025/fifth-sun.html"><em>Fifth Sun</em> van Camilla Townsend</a>. De boeken zijn geschreven in het Nederlands (45 boeken), Engels (29 boeken), Duits (5 boeken), Frans (5 boeken) of Italiaans (1 boek – <i>mental note:</i> meer Italiaans lezen). Het dunste boek heeft 55 pagina's (<a href="../2022.html#crisis"><em>Crisis!</em> van Beatrice de Graaf</a>), het dikste telt er 762 (<a href=""><em>Resonanz</em> van Hartmut Rosa</a>). Meer specifiek is de verdeling van de pagina's als volgt:</p>
 
-      // Append the svg object to the body of the page
-      const svg = d3.select("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
+      <div class="image">
+        <img src="imgs/jaaroverzicht.jpeg" alt="">
+        <figcaption>Fig. 1: verdeling van de lengtes van de boeken algemeen (groen figuur links) en per jaar.</figcaption>
+      </div>
 
-      // X axis
-      const x = d3.scaleBand()
-        .range([0, width])
-        .domain(dagen.map(d => d.dag))
-        .padding(0.2);
-      svg.append("g")
-        .attr("transform", `translate(0,${height})`)
-        .call(d3.axisBottom(x))
-        .selectAll("text")
-        .attr("transform", "translate(-10,0)rotate(-45)")
-        .style("text-anchor", "end")
-        .attr("class", "axis-label");
+      <p>Het blijkt dat ik vooral in 2022 wat dikkere boeken las. Misschien als gevolg hiervan komt het dikste boek (dat van Hartmut Rosa) niet als uitbijter naar voren – de enige uitbijter per jaar die we hier zien betreft <a href="../2024/east-of-eden.html"><em>East of Eden</em> van John Steinbeck</a>.</p>
+        
+       
+      <h2>De boekverslagen</h2>
+      <p>In totaal tellen de verslagen 69.173 woorden. Het kortste verslag is het verslag van <a href="../2022.html#elementaire-deeltjes-fascisme"><em>Elementaire deeltjes - fascisme</em></a> (177 woorden), het langste is van <a href="../2025/het-continent-zonder-eigenschappen.html"><em>Het continent zonder eigenschappen</em></a> (1674 woorden), maar dat is een beetje flauw omdat ik daarin een beschrijving meeneem van al de bladwijzers die Sloterdijk in de geschiedenis van Europa legt. Als je dit werk er uit haalt, is het langste boekverslag dat van <a href="../2025/vrij-spel.html"><em>Vrij Spel</em> van Richard Powers</a>.</p>
+    
 
-      // Add Y axis
-      const y = d3.scaleLinear()
-        .domain([0, 50])
-        .range([height, 0]);
-      svg.append("g")
-        .call(d3.axisLeft(y))
-        .selectAll("text")
-        .attr("class", "axis-label");
+      <p>Wanneer je de lengte van de verslagen over de tijd plot, krijg je een aardig beeld:</p>
 
-      // Bars
-      svg.selectAll("urengraph")
-        .data(dagen)
-        .join("rect")
-        .attr("x", d => x(d.dag))
-        .attr("y", d => y(d.aantal))
-        .attr("width", x.bandwidth())
-        .attr("height", d => height - y(d.value))
-        .attr("class", "bar");
+      <div class="image">
+        <img src="imgs/lengte-overzicht.jpeg" alt="">
+        <figcaption>Fig.2: overzicht van de lengte van de boekverslagen.</figcaption>
+      </div>
 
-    </script>
+      <p>Het is duidelijk dat ik steeds langer van stof word. Het is ook wel een beetje te begrijpen, omdat ik sinds 2024 elk boekverslag zijn eigen pagina geef. Tot die tijd was elk jaar gewoon één lang bestand, en dan is het wat onhandiger om lange boekverslagen te maken. Tevens heb ik sinds ongeveer diezelfde tijd de neiging om in het verslag een korte samenvatting van het besproken werk op te nemen.</p>
+
+      <p>Wanneer we de lengte van het boek vergelijken met de lengte van het verslag onstaat er een aardig en informatief beeld:</p>
+
+      <div>
+        <img src="imgs/boeklengte-besprekingslengte-overzicht.jpeg" alt="">
+        <figcaption>Fig.3: de lengte van de verslagen gekoppeld aan de lengte van de boeken.</figcaption>
+      </div>
+
+      <p>Blijkbaar heeft de lengte van het boek geen enkele invloed op de lengte van het boekverslag. De correlatie tussen deze twee is ook 0,07, dus feitelijk verwaarloosbaar – wat ook blijkt uit Figuur 3.</p>
+
+      <p>Soms is de tijd die er zit tussen het moment dat ik een boek heb uitgelezen en ik het verslag op de site heb toegevoegd vrij lang – soms gebeurt dit ook op dezelfde dag. Het langste dat het heeft geduurd is het verslag van <a href="../2022.html#grenzen-aan-de-gemeenschap"><em>Grenzen aan de gemeenschap</em> van Helmut Plessner</a> (267 dagen), wat te verklaren is doordat ik dat boek lange tijd had uitgeleend aan een goede vriend.</p>
+
+      <p>Grafisch ziet die verdeling er zo uit:</p>
+
+      <div>
+        <img src="imgs/toevoegingstijd.jpeg" alt="">
+        <figcaption>Fig 4: de verdeling van de tijd tussen het uitlezen van een boek en het toevoegen van het verslag.</figcaption>
+      </div>
+    </section>
+
+
+
+  <section id="commits">
+    <h2>Github statistieken</h2>
+    <p>Vanzelfsprekend houdt ik de code van de verslagen ook bij <a href="https://github.com/bart314/boeken">via git</a>, dus het is ook mogelijk (en leuk) om eens naar de commits te kijken. In totaal zijn er 163 commits gedaan: de eerste is van <a href="https://github.com/bart314/boeken/commit/18704cfac4b7e49a58cc5822845f05ca049652e2">23 augustus 2022 (nota bene)</a> en de laatste <a href="https://github.com/bart314/boeken/commit/3c67477377fe2d61fba0361c701363df1ea6bfc5">van 28 december 2025</a>.</p> 
+
+    <p>De verdeling per uur ziet er als volgt uit:</p>
+
+    <div>
+      <img src="imgs/commits-per-uur.jpeg" alt="">
+      <figcaption>Fig.5: commits per uur.</figcaption>
+    </div>
+
+    <p>Het is duidelijk dat ik vooral in de middag hieraan werk, en dan met name de latere middag. 's Nachts doe ik hier niks aan, wat logisch is, want dan ben ik aan het slapen. Een ander interessant beeld ontstaat wanneer we het aantal commits per dag checken:</p>
+
+    <div>
+      <img src="imgs/commits-per-dag.jpeg" alt="">
+      <figcaption>Fig. 6: commits per dag.</figcaption>
+    </div>
+
+    <p>Verreweg de meeste commits gebeuren op zondag, wat inhoudt dat ik meestal op verloren zondagmiddagen de boekverslagen uitwerk. Op vrijdag werk ik blijkbaar zelden aan dit project.</p>
+  </section><!-- commits-->
+
   </body>
 
 </html>
