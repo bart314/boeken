@@ -16,6 +16,29 @@
     src: url('fonts/italiana-regular.woff') format('woff');
 }
 
+@font-face {
+  font-family:Graphik; 
+  src: url('fonts/Graphik-Semibold-Web.woff2');
+}
+
 p { font-family: Bodoni, Georia, serif;}
 h1, h2 { font-family: Italiana, Georgia, serif; }
 h1 { letter-spacing: 2px; }
+
+
+figcaption cite { font-weight:normal; font-style:italic; font-weight:200; margin-left:1vw;}
+
+figcaption {
+  font-weight:700;
+	font-size: .8125rem;
+	margin-top: .5rem;
+	line-height: 1.25;
+	font-family: Graphik,Helvetica Neue,Arial,sans-serif;
+  font-style:normal;
+}
+
+
+@media only screen and (min-width: 768px) {
+    figcaption { width:auto; }
+}
+
