@@ -23,6 +23,8 @@ tr:nth-child(even) { background-color:lightgray; }
 p#rating { text-align:center; }
 p#rating span { color:transparent; text-shadow:0 0 0 gray;}
 
+div.media { width:100%; display:flex; justify-content:center; }
+
 #toc { display:flex; margin-bottom: 5vh; }
 #toc div { width:50%; cursor:pointer; text-align:center; }
 
@@ -54,7 +56,7 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
 #see-also li img { width:90px; height:145px; }
 #see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; width:120px; }
 
-#links { display:flex; justify-content:space-around; }
+#links, div.links { display:flex; justify-content:space-around; }
 
 
 

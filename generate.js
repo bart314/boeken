@@ -111,7 +111,7 @@ const template = `
     <a href="../overzicht.html">Alle boeken</a>
     <a href="../stats/">Statistieken</a>
   </div>
-</footer
+</footer>
 
 <script src="../js/inject-see-also.js"></script>
 <script src="../js/scroll.js"></script>
