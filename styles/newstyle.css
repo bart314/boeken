@@ -54,6 +54,8 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
 #see-also li img { width:90px; height:145px; }
 #see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; width:120px; }
 
+#links { display:flex; justify-content:space-around; }
+
 
 
 @media (prefers-color-scheme: dark) {
@@ -69,7 +71,7 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
     div.sidebar { width:25vw; position:fixed; right:5vw; border-top:none; }
     div.content { width:60vw; margin-left:5vw; text-align:justify; }
     #toc { margin-bottom:0; }
-    #see-also { margin-left:5vw; width:60vw; }
+    #see-also, #links { margin-left:5vw; width:60vw; }
     div.info { display:flex; justify-content:space-evenly; font-size:0.5rem;}
     div.info p { font-size:.8rem; color:gray; }
     table.widetable { width:100%; }

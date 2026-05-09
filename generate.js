@@ -97,12 +97,21 @@ const template = `
         <h4>Volgend boek</h4>
       </div>
     </div><!-- toc -->
-
-    <div id="subnav"> <a href="../">2026</a> <a href="../overzicht.html">Alle boeken</a> </div>
 </div><!-- sidebar -->
 </section>
 
-<div id="see-also" data-nummer="${id}"> </div><!-- see-also -->
+<footer>
+  <div id="see-also" data-nummer="${id}"> </div><!-- see-also -->
+  <div id="links"> 
+    <a href="../2022.html">2022</a>
+    <a href="../2023.html">2023</a>
+    <a href="../2024/">2024</a>
+    <a href="../2025/">2025</a>
+    <a href="../2026/">2026</a>
+    <a href="../overzicht.html">Alle boeken</a>
+    <a href="../stats/">Statistieken</a>
+  </div>
+</footer
 
 <script src="../js/inject-see-also.js"></script>
 <script src="../js/scroll.js"></script>
