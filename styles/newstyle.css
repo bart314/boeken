@@ -57,6 +57,7 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
 #see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; width:120px; }
 
 #links, div.links { display:flex; justify-content:space-around; }
+footer { margin-bottom:10vh; }
 
 
 
