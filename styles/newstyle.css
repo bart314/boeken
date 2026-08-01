@@ -57,7 +57,9 @@ ul.books { display:flex; overflow-x:scroll; overflow-y:hidden; justify-content:s
 #see-also li p { margin-top:5px; font-family:inherit; font-size:smaller; line-height:90%; width:120px; }
 
 #links, div.links { display:flex; justify-content:space-around; }
+#ondertekening { text-align:center; margin-top:10px; font-size:smaller;}
 footer { margin-bottom:10vh; }
+
 
 
 
@@ -74,7 +76,7 @@ footer { margin-bottom:10vh; }
     div.sidebar { width:25vw; position:fixed; right:5vw; border-top:none; }
     div.content { width:60vw; margin-left:5vw; text-align:justify; }
     #toc { margin-bottom:0; }
-    #see-also, #links { margin-left:5vw; width:60vw; }
+    #see-also, #links, #ondertekening { margin-left:5vw; width:60vw; }
     div.info { display:flex; justify-content:space-evenly; font-size:0.5rem;}
     div.info p { font-size:.8rem; color:gray; }
     table.widetable { width:100%; }

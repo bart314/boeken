@@ -111,6 +111,9 @@ const template = `
     <a href="../overzicht.html">Alle boeken</a>
     <a href="../stats/">Statistieken</a>
   </div>
+  <div>
+    <p id="ondertekening">Gemaakt door <a href="https://www.bartbarnard.nl/cv/">Bart Barnard</a> zonder <a href="https://notbyai.fyi/">gebruik van kunstmatige intelligentie</a> of <a href="https://www.frameworklessmovement.org/">frameworks</a>. Bekijk dit project <a href="https://github.com/bart314/boeken">op github</a></p>
+  </div>
 </footer>
 
 <script src="../js/inject-see-also.js"></script>
