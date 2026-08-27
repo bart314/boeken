@@ -69,8 +69,10 @@ const template = `
       <p>Toegevoegd op ${vandaag}</p>
       <p id="word-count">AANTAL WOORDEN</p>
     </div>
+    <main>
     <h1>${titel}</h1>
     CONTENT HIER
+    </main>
   </div><!-- content -->
 
 <div class="sidebar" id="sidebar">
@@ -118,6 +120,10 @@ const template = `
 
 <script src="../js/inject-see-also.js"></script>
 <script src="../js/scroll.js"></script>
+<script src="../js/hide_summary.js"></script>
+<script>
+  count_words()
+</script>
     
 </body>
 </html>

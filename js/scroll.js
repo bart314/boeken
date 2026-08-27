@@ -37,3 +37,16 @@ if (el) {
     document.getElementById('tmp').style.display = 'none'
   })
 }
+
+
+// wordcount
+function count_words() {
+  const count_el = document.getElementById('word-count')
+  if (count_el) {
+    let tot = 0;
+    document.querySelectorAll('main p').forEach(p => { 
+      if(p.offsetParent != null) tot += p.innerText.split(' ').length 
+    })
+    count_el.innerHTML = `${tot} woorden`
+  }
+}
