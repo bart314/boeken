@@ -67,7 +67,7 @@ const template = `
       <img class="img-beacon" src="../php/teller.php?file=${titel_intern}.html&sig=${signature}" alt="">
       <p>Verslag nummer ${id}</p>
       <p>Toegevoegd op ${vandaag}</p>
-      <p id="word-count">AANTAL WOORDEN</p>
+      <p id="word-count"></p>
     </div>
     <main>
     <h1>${titel}</h1>
