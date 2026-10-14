@@ -71,9 +71,10 @@
         <form>
             <input type="text" id="zoekbalk" placeholder="🔎">
         </form>
-        <div class="sorteer active"></a><span data-sorteer="titel" class="txt">sorteer op </span>titel</div>
-        <div class="sorteer"></a><span data-sorteer="auteur" class="txt">sorteer op </span>auteur</div>
-        <div class="sorteer"></a><span data-sorteer="nr" class="txt">sorteer op </span>datum</div>
+        <div class="sorteer active"><span data-sorteer="titel" class="txt">sorteer op </span>titel</div>
+        <div class="sorteer"><span data-sorteer="auteur" class="txt">sorteer op </span>auteur</div>
+        <div class="sorteer"><span data-sorteer="nr" class="txt">sorteer op </span>datum</div>
+        <div id="toptien">top tien</div>
     </header>
     <div>
         <ul id="main">
@@ -125,18 +126,40 @@
             fill_list(book_data)
         }))
 
+        document.getElementById('toptien').addEventListener('click', evt => {
+            fetch('php/toptien.php')
+            .then( r => r.json() )
+            .then( json => { 
+                let tmp = []
+                for(b of json) {
+                    filtered = book_data.filter( el => {
+                        if(el.link.includes(b.file)) {
+                            el.views = b.aantal
+                            return true
+                        }
+                    })
+                    tmp.push(...filtered)
+                }
+                // console.log(tmp)
+                //console.log(book_data)
+                book_data = tmp
+                fill_list(book_data)
+            })
+        })
+
 
         function fill_list(books) {
             const booklist = document.getElementById('main')
             let html = ''
             booklist.innerHTML = html
             books.forEach ( book => {
+                let views = (book.views != undefined) ? `, ${book.views} keer bekeken` : ''
                 html += `<li onclick="document.location='${api_url}${book.link}'" data-book-id="${book.nr}">
                     <img src="${api_url}${book.cover}">
                     <div>
                     <p>${book.titel}</p>
                     <p>${book.auteur}</p>
-                    <p class="small">(verslag nummer ${book.nr})</p>
+                    <p class="small">(verslag nummer ${book.nr}${views})</p>
                     </div>
                 </li>`
             })

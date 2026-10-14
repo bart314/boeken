@@ -5,3 +5,4 @@ watch.rb
 *.swp
 node_modules
 .env
+notities
