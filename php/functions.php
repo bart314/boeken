@@ -16,7 +16,7 @@ function check_referer() {
     if (!empty($_SERVER['HTTP_REFERER'])) {
         $refererHost = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
     
-        if (!in_array($refererHost, ['localhost', 'mandarin.nl', 'www.mandarin.nl'])) {
+        if (!in_array($refererHost, ['localhost', 'mandarin.nl', 'www.mandarin.nl', 'bartbarnard.nl', 'www.bartbarnard.nl'])) {
             http_response_code(403);
             exit('Forbidden');
         }

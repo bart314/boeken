@@ -12,9 +12,10 @@ Promise.all(links)
     const boeken = data[0]
     const recs = data[1].filter(el => el.nr == see_also.dataset['nummer'])
     if (recs.length > 0) {
+        const url = new URL(document.location)
         const api_url = (document.location.href.indexOf('localhost') < 0) 
-            ? 'https://mandarin.nl/boeken/' 
-            : 'http://localhost:8008/'
+            ? `${url.origin}/boeken/`
+            : `${url.origin}/`
 
         let html = '<h2>Bekijk ook eens</h2><ul class="books">'
         recs[0]['recommendations'].forEach( r => {

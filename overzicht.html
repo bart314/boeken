@@ -88,9 +88,10 @@
     <script>
         var book_data
         var curr_sort
+        const url = new URL(document.location)
         const api_url = (document.location.href.indexOf('localhost') < 0) 
-            ? 'https://mandarin.nl/boeken/' 
-            : 'http://localhost:8008/'
+            ? `${url.origin}/boeken/`
+            : `${url.origin}/`
 
         fetch('js/data/boekendata.json')
         .then(resp => resp.json() )
